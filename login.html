@@ -1,6 +1,8 @@
 
 <html>
     <head>
+
+      
 <style>
 .footer {
   position: fixed;
@@ -81,11 +83,20 @@ h3  {
 .topnav-right {
   float: right;
 }
-button {
-    size: 50px;
+.block {
+  background-color: orange;
+  border: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 body {
-    background-image: url('https://www.swanwelzijn.nl/wp-content/uploads/2020/06/login.png');
+    background-image: url('http://thoughtcatalog.com/wp-content/uploads/2014/04/shutterstock_144112840.jpg');
 }
 #main { text-align: center;}
 </style>
@@ -114,7 +125,8 @@ console.log(post_req.status)
 
 
   if (post_req.status == 200) {
-    user_created.innerHTML = "Your login credentials are correct!"
+    user_created.innerHTML = username + " has currectly logged in! "
+    login.innerHTML = username 
   }
 
   else {
@@ -132,7 +144,7 @@ console.log(post_req.status)
             <a href="faq.html">FAQ</a>
             <a href="areas.html"> Areas Of Interests </a>
             <div class="topnav-right"> 
-                <a id="login" href="login.html"> Login </a>
+                <a  href="login.html"> <p id="login"> Login </p></a>
               </div>
           </div>
         <h1> Login to your account  </h1>
@@ -143,10 +155,10 @@ console.log(post_req.status)
 
         
         
-        <h3> <button onclick="submitlogindata()" size="big" type="submit" > Login </button></h3>
-        <h3> <a href="create.html"> Create an account </a></h3>
+        <h3> <button class="block" onclick="submitlogindata()" > Login </button></h3>
+         <a href="create.html"> <h3>Create an account</h3> </a>
 
-        <h3> <a target ="_blank" href= "https://www.w3schools.com/howto/howto_css_topnav_right.asp"> Forgotten password</a></h3>
+        <a target ="_blank" href= "https://support.content.office.net/en-us/media/8952f60a-6bb8-49df-b87f-a03714856120.png">  <h3>Forgotten password</h3></a>
     <div class="footer">
       <p>Site written by group 2 for HCI </p>
     </div>

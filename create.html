@@ -81,11 +81,23 @@ h3  {
 .topnav-right {
   float: right;
 }
-button {
-    size: 50px;
+.block {
+  background-color: orange;
+  border: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.test {
+  color: green;
 }
 body {
-    background-image: url('https://www.swanwelzijn.nl/wp-content/uploads/2020/06/login.png');
+    background-image: url('http://thoughtcatalog.com/wp-content/uploads/2014/04/shutterstock_144112840.jpg');
 }
 #main { text-align: center;}
 </style>
@@ -148,13 +160,13 @@ const post_req = await fetch('https://poor-dolls-heal-130-37-65-160.loca.lt/crea
 
         
         
-        <h3> <button size="big" type="submit" onclick="submitlogindata()"> Create the account </button></h3>
+        <h3> <button class="block"  type="submit" onclick="submitlogindata()"> Create the account </button></h3>
 
     <div class="footer">
       <p>Site written by group 2 for HCI </p>
     </div>
 
-    <h2 id="user_created"></h2>
+    <h2 class="test" id="user_created"></h2>
 
     </body>
 
