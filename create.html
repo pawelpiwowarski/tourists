@@ -117,9 +117,10 @@ const post_req = await fetch('https://loose-cats-shout-130-37-65-160.loca.lt/cre
   body: JSON.stringify(Obj)})
 
 
-
-  if (post_req) {
-    user_created.innerHTML = "User " + username  + " been created!"
+  const post_req_json = await post_req.json()
+ 
+  if (post_req_json) {
+    user_created.innerHTML = post_req_json
   }
 
 // Your web app's Firebase configuration
