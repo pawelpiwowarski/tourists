@@ -111,8 +111,9 @@ const Obj = {
 username,password,email
 }
 // Import the functions you need from the SDKs you need
-const post_req = await fetch('https://loose-cats-shout-130-37-65-160.loca.lt/create_user', {method: 'POST', headers: {
+const post_req = await fetch('https://poor-dolls-heal-130-37-65-160.loca.lt/create_user', {method: 'POST', headers: {
     'Content-Type': 'application/json',
+    "Bypass-Tunnel-Reminder": true
   },
   body: JSON.stringify(Obj)})
 
