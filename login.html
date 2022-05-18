@@ -1,0 +1,158 @@
+
+<html>
+    <head>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+ol {
+
+    color:  grey;
+   font-size: 40px;
+   text-align: center;
+   text-shadow: #333;
+   font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+    img {
+        width: 250px;
+        height: 250px;
+    }
+    h1 {
+      color:  orange;
+   font-size: 40px;
+   text-align: center;
+   text-shadow: #333;
+   font-family: Arial, Helvetica, sans-serif;
+    }
+h2 {
+    color:  orange;
+   font-size: 40px;
+   text-align: center;
+   text-shadow: #333;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+h3  {
+    color: black;
+    text-align: center;  
+    font-size: 40px;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: lightcyan;
+  color: black;
+}
+.topnav-right {
+  float: right;
+}
+button {
+    size: 50px;
+}
+body {
+    background-image: url('https://www.swanwelzijn.nl/wp-content/uploads/2020/06/login.png');
+}
+#main { text-align: center;}
+</style>
+    </head>
+
+    <script>
+
+const submitlogindata = async ()=>{ 
+            
+            const api_url_tunneled = 'https://loose-cats-shout-130-37-65-160.loca.lt/login'
+            const username = document.getElementById("username").value;
+            const password = document.getElementById('password').value;
+
+
+            if (!username || !password) {
+              return user_created.innerHTML = "Enter all details! "
+            }
+
+const Obj = {
+username,password
+}
+// Import the functions you need from the SDKs you need
+const post_req = await fetch(api_url_tunneled + "?username=" +username +"&password=" +password ,{method: 'GET'})
+
+console.log(post_req.status)
+
+
+  if (post_req.status == 200) {
+    user_created.innerHTML = "Your login credentials are correct!"
+  }
+
+  else {
+    user_created.innerHTML = "Your login credentials are not correct!"
+  }
+}
+    </script>
+    <body>
+
+        <div class="topnav">
+            <a class="active" href="index.html">BestTourist</a>
+            <a href="task1.html">Book transport</a>
+            <a href="task2.html">Book accomodation</a>
+            <a href="task3.html">Tips from locals</a>
+            <a href="faq.html">FAQ</a>
+            <a href="areas.html"> Areas Of Interests </a>
+            <div class="topnav-right"> 
+                <a id="login" href="login.html"> Login </a>
+              </div>
+          </div>
+        <h1> Login to your account  </h1>
+   
+        <h3> Username <input type="text " id="username"> </h3>
+
+        <h3> Password<input type="text " id="password"> </h3>
+
+        
+        
+        <h3> <button onclick="submitlogindata()" size="big" type="submit" > Login </button></h3>
+        <h3> <a href="create.html"> Create an account </a></h3>
+
+        <h3> <a target ="_blank" href= "https://www.w3schools.com/howto/howto_css_topnav_right.asp"> Forgotten password</a></h3>
+    <div class="footer">
+      <p>Site written by group 2 for HCI </p>
+    </div>
+
+    <h2 id="user_created"></h2>
+    </body>
+
+</html>
+

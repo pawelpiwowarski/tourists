@@ -1,0 +1,148 @@
+
+<!---
+This is a simple interface for buying the the tickets.
+Users are presented with big visible dropdown menus where they can 
+choose their starting point and destination, then they click the 
+buy button, next they are presented with the price for the ticket 
+and the starting point and destination.
+
+The code is really simple it combines basic usage of javascript inside the html file
+and the css styling in the style tag. We created one function that is called upon clicking 
+the buy button, then a random price is generated from 0 to 10, the user might get a free ticket. 
+Some basic css is appied for styling like bigger buttons and visible colours. 
+--->
+<html>
+    <head>
+<style>
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+h2 {
+    color:  yellow;
+   font-size: 40px;
+}
+.menu {
+    margin: 30px;
+    height: 50px;
+  width: 50%;
+  background-color: powderblue;
+  font-size: large;
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: lightcyan;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+}
+
+#main { text-align: center;}
+</style>
+    </head>
+    <body background="http://holland-explorer.com/wp-content/uploads/2020/06/ns-how-to-buy-train-ticket-the-netherlands.jpg">
+        <script>
+            
+
+            function buyticket() {
+               
+
+         
+                const p = document.getElementById("starting").value;
+                const  t = document.getElementById("destination").value;
+                const price = Math.floor(Math.random() * 10) 
+                
+                accept.innerHTML = "The price is " +  price + " euro" + "<br />"  + "<br />"+ "From " + p + " to " + t;
+                
+                if (price == "0") {
+                acceptv2.innerHTML = "You are lucky the ticket is free 🍀🍀🍀"
+                }
+              else {
+                acceptv2.innerHTML = ""
+              }
+            
+
+
+                
+            }
+        </script>
+        <div class="topnav">
+            <a class="active" href="index.html">BestTourist</a>
+            <a href="task1.html">Book transport</a>
+            <a href="task2.html">Book accomodation</a>
+            <a href="task3.html">Tips from locals</a>
+            <a href="faq.html">FAQ</a>
+            <a href="areas.html"> Areas Of Interests </a>
+            <div class="topnav-right"> 
+              <a id="login" href="login.html"> Login </a>
+            </div>
+          </div>
+<div id="main">
+    <select class="menu" name="kina" id="starting" >
+
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Hague">Hague</option>
+        <option value="Rotterdam">Rotterdam</option>
+        <option value="Delft">Delft</option>
+        <option value="Mastricht">Mastricht</option>
+        </select>
+        <br>
+        <h2> TO </h2>
+    <select class="menu" name="kina" id="destination" >
+
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Hague">Hague</option>
+        <option value="Rotterdam">Rotterdam</option>
+        <option value="Delft">Delft</option>
+        <option value="Mastricht">Mastricht</option>
+        </select>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <input class="menu" type="button" value="Buy Ticket"onclick="buyticket()"></input>
+      
+        <h2 id="accept"> </h2>
+        <br>
+        <h2 id="acceptv2"> </h2>
+
+    </div>
+   
+    <div class="footer">
+        <p>Site written by group 2 for HCI </p>
+      </div>
+  
+    </body>
+
+</html>
+

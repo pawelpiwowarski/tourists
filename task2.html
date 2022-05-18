@@ -1,0 +1,162 @@
+<!---
+Another simple interface for choosing the hotels.
+User chooose the place, the stars, the duration.
+
+A simple javscript implementation with one function submitstay() that collects all of the values 
+and puts it into the output presented to the user.
+ Some basic css is appied for styling like bigger buttons and visible colours. 
+--->
+
+<html>
+    <head>
+<style>
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+    h1  {
+        color:orange;
+    }
+    .submit {
+        color: orange;
+    }
+.location {
+  height: 50px;
+  width: 50%;
+  background-color: powderblue;
+  font-size: large;
+}
+
+h2 {
+    color:  yellow
+}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: lightcyan;
+  color: black;
+}
+
+.topnav-right {
+  float: right;
+}
+#main { text-align: center;}
+</style>
+    </head>
+    <script> 
+
+
+        function submitstay() {
+
+            const starting = document.getElementById("starting").value;
+            const stars = parseInt(document.getElementById("stars").value);
+            const  nights = document.getElementById("night").value;
+        
+        
+            const hotel_name = "Hotel Sheraton"
+            submit.innerHTML  = "Your stay in " + hotel_name + " in " + starting  + "<br />" +" for " + nights + " nights" 
+            + "<br />"  + "Your hotel has " + stars +" stars"
+        
+        }
+        </script>
+    <body background="https://c8.alamy.com/comp/P46NP1/hotel-icon-mobile-app-printing-web-site-icon-simple-element-sing-monochrome-hotel-icon-illustration-P46NP1.jpg">
+        <script>
+            
+
+            function buyticket() {
+                console.log('test')
+                var p = document.getElementById("starting").value;
+                var t = document.getElementById("destination").value;
+                accept.innerHTML = "The price is " + Math.floor(Math.random() * 10)  + " euro";
+                acceptv2.innerHTML = "From " + p + " to " + t;
+
+            }
+        </script>
+         <div class="topnav">
+            <a class="active" href="index.html">BestTourist</a>
+            <a href="task1.html">Book transport</a>
+            <a href="task2.html">Book accomodation</a>
+            <a href="task3.html">Tips from locals</a>
+            <a href="faq.html">FAQ</a>
+            <a href="areas.html"> Areas Of Interests </a>
+            <div class="topnav-right"> 
+              <a id="login" href="login.html"> Login </a>
+            </div>
+          </div>
+    </body>
+<div id="main">
+   <h1> Select Location</h1> 
+
+    <select class="location" name="kina" id="starting" >
+
+        <option value="Paris">Paris</option>
+        <option value="London">London</option>
+        <option value="Copenhagen">Copenhagen</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Madrid">Madrid</option>
+        </select>
+
+        <h1> Select stars of the hotel</h1> 
+        <br>
+        <select class="location" name="kina" id="stars" >
+
+            <option value="1"> ⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+
+            <h1> Select how many night you want to stay</h1> 
+            <select class="location" name="kina" id="night" >
+            <option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<br>
+<br>
+<br>
+
+<input class="location" type="button" value="Submit" onclick="submitstay()"> </input>
+
+<h1 class="submit" id="submit"> </h1>
+<div id="image"> </div>
+
+</div> 
+<div class="footer">
+    <p>Site written by group 2 for HCI </p>
+  </div>
+</html>
