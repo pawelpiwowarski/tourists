@@ -95,6 +95,10 @@ h3  {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+#bad_creds {
+  color: red;
+}
 body {
     background-image: url('http://thoughtcatalog.com/wp-content/uploads/2014/04/shutterstock_144112840.jpg');
 }
@@ -126,11 +130,13 @@ console.log(post_req.status)
 
   if (post_req.status == 200) {
     user_created.innerHTML = username + " has currectly logged in! "
+    bad_creds.innerHTML = ""
     login.innerHTML = username 
   }
 
   else {
-    user_created.innerHTML = "Your login credentials are not correct!"
+    user_created.innerHTML = ""
+    bad_creds.innerHTML = "Your login credentials are not correct!"
   }
 }
     </script>
@@ -151,7 +157,7 @@ console.log(post_req.status)
    
         <h3> Username <input type="text " id="username"> </h3>
 
-        <h3> Password<input type="text " id="password"> </h3>
+        <h3> Password<input type="password" id="password"> </h3>
 
         
         
@@ -164,6 +170,7 @@ console.log(post_req.status)
     </div>
 
     <h2 id="user_created"></h2>
+    <h2 id="bad_creds"></h2>
     </body>
 
 </html>

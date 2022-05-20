@@ -93,6 +93,9 @@ h3  {
   margin: 4px 2px;
   cursor: pointer;
 }
+#enter_all {
+  color: red;
+}
 .test {
   color: green;
 }
@@ -114,7 +117,7 @@ body {
 
 
             if (!username || !email || !password) {
-              return user_created.innerHTML = "Enter all details! "
+              return enter_all.innerHTML = "Enter all details! "
             }
 
 
@@ -134,6 +137,7 @@ const post_req = await fetch('https://tourist-api.vercel.app/create_user', {meth
  
   if (post_req_json) {
     user_created.innerHTML = post_req_json
+    enter_all.innerHTML = ""
   }
 
 // Your web app's Firebase configuration
@@ -156,7 +160,7 @@ const post_req = await fetch('https://tourist-api.vercel.app/create_user', {meth
    
         <h3> Username <input type="text " id="username"> </h3>
         <h3> Email <input type="text " id="email"></h3>
-        <h3> Password<input type="text " id="password"> </h3>
+        <h3> Password<input type="password" id="password"> </h3>
 
         
         
@@ -167,7 +171,7 @@ const post_req = await fetch('https://tourist-api.vercel.app/create_user', {meth
     </div>
 
     <h2 class="test" id="user_created"></h2>
-
+    <h2 class="test" id="enter_all""></h2>
     </body>
 
 </html>
